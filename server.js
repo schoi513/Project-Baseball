@@ -10,13 +10,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ exntended: false }));
 
+app.set('views', 'views');
+app.set('view engine', 'ejs');
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
 
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.render('index');
 });
 
 app.use('/teams', teamsRouter);
