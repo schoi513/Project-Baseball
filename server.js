@@ -1,6 +1,8 @@
 const express = require('express');
 const logger = require('morgan');
 
+const teamsRouter = require('./routes/teams-router');
+
 const app = express();
 
 app.use(logger('dev'));
@@ -13,6 +15,8 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
     res.send('hello world');
 });
+
+app.use('/teams', teamsRouter);
 
 app.use('*', (req, res)=> {
     res.status(404).send('not found');
