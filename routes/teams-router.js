@@ -1,8 +1,8 @@
 const express = require('express');
+const teamsController = require('../controllers/teams-controller');
 const teamsRouter = express.Router();
 
-teamsRouter.get('/', (req, res) => {
-    res.send('list of teams goes here');
-});
-
+teamsRouter.get('/', teamsController.index);
+teamsRouter.post('/', teamsController.create);
+ 
 module.exports = teamsRouter;

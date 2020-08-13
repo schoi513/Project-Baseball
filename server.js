@@ -1,11 +1,14 @@
 const express = require('express');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
 
 const teamsRouter = require('./routes/teams-router');
 
 const app = express();
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ exntended: false }));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

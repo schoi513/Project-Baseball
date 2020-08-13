@@ -11,6 +11,12 @@ class Team {
             return teams.map(team => new this(team));
         });
     }
+
+    save(){
+        return db.one(`INSERT INTO teams (name)
+         VALUES ($/name/) 
+         RETURNING *`,).then(team => Object.assign(this, team));
+    }
 }
 
 
