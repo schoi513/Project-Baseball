@@ -6,21 +6,17 @@
         <% console.log(team) %>
     <div class="team">
         <div class="name-status">
-            <h3><%= team.name %></h3>
-        </div>
-        <div class="win-actions">
-            <h5><%= team.win %></h5>
+            <h3><a href="/teams/<%=team.id%>"><%= team.name %></a></h3>
             <div class="win-actions">
                 <a class = "buttonlike" a href="/teams/<%= team.id %>">Detail</a>
                 <a class = "buttonlike" a href="/teams/<%= team.id %>/edit">Edit</a>
             </div>
         </div>
+        <div class="win-actions">
+            <h5>Wins: <%= team.win %></h5>
+        </div>
         <div class="loss-actions">
-            <h5><%= team.loss %></h5>
-            <div class="loss-actions">
-                <a class = "buttonlike" a href="/teams/<%= team.id %>">Detail</a>
-                <a class = "buttonlike" a href="/teams/<%= team.id %>/edit">Edit</a>
-            </div>    
+            <h5>Losses: <%= team.loss %></h5> 
         </div>
     </div>
 <% }) %>

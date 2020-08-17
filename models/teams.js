@@ -6,7 +6,6 @@ class Team {
         this.name = team.name;
         this.win = team.win;
         this.loss = team.loss;
-        this.user_id = team.user_id;
     }
 
     static getAll(){
@@ -24,8 +23,8 @@ class Team {
     }
 
     save(){
-        return db.one(`INSERT INTO teams (name, win, loss, user_id)
-         VALUES ($/name/, $/win/, $/loss/, $/user_id/) 
+        return db.one(`INSERT INTO teams (name, win, loss)
+         VALUES ($/name/, $/win/, $/loss/) 
          RETURNING *`, this).then(team => Object.assign(this, team));
     }
 

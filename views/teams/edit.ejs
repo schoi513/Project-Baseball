@@ -1,7 +1,7 @@
 <%- include('../partials/boilerplate.ejs') %>
 
 <form method="POST" action="/teams/<%= team.id %>?_method=PUT">
-    <input type="text" name="teams" placeholder="Teams" value="<%= team.name %>">
+    <input type="text" name="name" placeholder="Teams" value="<%= team.name %>">
     <input type="number" name="win" placeholder="Win" value="<%= team.win %>">
     <input type="number" name="loss" placeholder="Loss" value="<%= team.loss %>">
     <input type="submit" value="Finalizing stats">

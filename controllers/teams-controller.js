@@ -11,12 +11,10 @@ const teamsController = {
     },
 
     create(req, res, next) {
-        console.log(res.locals.user)
         new Team({
             name: req.body.name,
             win: req.body.win,
-            loss: req.body.loss,
-            user_id: res.locals.user
+            loss: req.body.loss
         })
         .save()
         .then((team) => {
@@ -35,6 +33,7 @@ const teamsController = {
     },
 
     update(req, res, next) {
+        console.log(req.params.id);
         Team.getById(req.params.id)
         .then(foundTeam => {
             foundTeam.update({
@@ -42,8 +41,8 @@ const teamsController = {
                 win: req.body.win,
                 loss: req.body.loss
             });
-        }).then(updatedTeam => {
-            res.redirect(`/teams/${updatedTeam.id}`);
+        }).then(() => {
+            res.redirect('/teams');
         })
         .catch(next);
         
