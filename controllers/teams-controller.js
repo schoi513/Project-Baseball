@@ -18,10 +18,19 @@ const teamsController = {
             user_id: req.user.id,
         })
         .save()
-        .then(team => {
-            res.json({ team })
-         }).catch(next)
+        .then((team) => {
+            res.redirect('/teams')
+         })
+         .catch(next)
     },
+
+    show(req, res, next) {
+        Team.getById(req.params.id)
+            .then(team => {
+                res.render('teams/show', { team })
+            })
+            .catch(next);
+    }
 }
 
 module.exports = teamsController;

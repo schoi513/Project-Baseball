@@ -9,11 +9,15 @@
         </div>
         <div class="win-actions">
             <h5><%= team.win %></h5>
-            <div class="win-actions">Win action goes here!</div>
+            <div class="win-actions">
+                <a class = "buttonlike" a href="/teams/<%= team.id %>">Detail</a>
+            </div>
         </div>
         <div class="loss-actions">
             <h5><%= team.loss %></h5>
-            <div class="loss-actions">Loss action goes here</div>    
+            <div class="loss-actions">
+                <a class = "buttonlike" a href="/teams/<%= team.id %>">Detail</a>
+            </div>    
         </div>
     </div>
 <% }) %>

@@ -15,11 +15,21 @@ class Team {
         });
     }
 
+    static getById(id){
+        return db.oneOrNone('SELECT * FROM teams WHERE id = $1', id)
+            .then(team => {
+                if (team) return new this(team);
+                else throw new Error('No team found'); 
+            })
+    }
+
     save(){
         return db.one(`INSERT INTO teams (name, win, loss, user_id)
          VALUES ($/name/, $/win/, $/loss/, $/user_id/) 
          RETURNING *`,).then(team => Object.assign(this, team));
     }
+
+    
 }
 
 
