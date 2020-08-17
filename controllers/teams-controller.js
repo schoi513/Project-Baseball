@@ -15,7 +15,6 @@ const teamsController = {
             name: req.body.name,
             win: req.body.win,
             loss: req.body.loss,
-            user_id: req.user.id,
         })
         .save()
         .then((team) => {
