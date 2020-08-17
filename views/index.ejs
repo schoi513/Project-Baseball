@@ -2,6 +2,9 @@
 
 <h1>Check out my baseball league sites</h1>
 <div>
-    <%= user.username %> is logged in
+    <% if (user){ %>
+        <%= user.username %> is logged in
+    <% } %>
+    
 </div>
 <%- include('./partials/end.ejs') %>
