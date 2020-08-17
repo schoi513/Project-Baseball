@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const teamsRouter = require('./routes/teams-router');
 
@@ -9,7 +10,9 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ exntended: false }));
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
+
 
 app.set('views', 'views');
 app.set('view engine', 'ejs');

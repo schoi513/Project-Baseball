@@ -29,7 +29,14 @@ class Team {
          RETURNING *`,).then(team => Object.assign(this, team));
     }
 
-    
+    update(changes){
+        Object.assign(this, changes);
+        return db.one(`UPDATE teams SET 
+        name = $/name/,
+        win = $/win/,
+        loss = $/loss/
+        RETURNING *`, this).then(team => Object.assign(this, team));
+    }
 }
 
 
