@@ -20,7 +20,10 @@ const usersController = {
       .then((user) => {
         req.login(user, (err) => {
           if (err) return next(err);
-          res.redirect('/user');
+          res.render('index',{
+              message: "logged in",
+              user: user,
+          });
         });
       })
       .catch(next);
