@@ -4,7 +4,11 @@
 <p>WIN: <%= team.win %></p>
 <p>LOSS: <%= team.loss %></p>
 
-<a href="/teams" class="buttonlike">Back to the teams</a>
+<form method="POST" action="/teams/<%=team.id %>?_method=DELETE">
+    <input type="submit" value="delete this game">
+</form>
+
+<a href="/teams" class="buttonlike">Back to teams</a>
 </div>
 
 <%- include('../partials/end.ejs') %>

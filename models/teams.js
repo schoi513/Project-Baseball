@@ -34,8 +34,13 @@ class Team {
         return db.one(`UPDATE teams SET 
         name = $/name/,
         win = $/win/,
-        loss = $/loss/
+        loss = $/loss/,
+        WHERE id = $/id/
         RETURNING *`, this).then(team => Object.assign(this, team));
+    }
+
+    delete(){
+        return db.none('DELETE FROM teams WHERE id = $1', this.id);
     }
 }
 

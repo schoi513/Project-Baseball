@@ -20,6 +20,6 @@ teamsRouter.get('/:id([0-9]+)/edit', teamsController.show, (req, res)=> {
 });
 
 teamsRouter.put('/:id([0-9]+)', teamsController.update);
-
+teamsRouter.delete('/:id([0-9]+)', teamsController.delete);
 
 module.exports = teamsRouter;

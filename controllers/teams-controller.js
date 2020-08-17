@@ -46,6 +46,16 @@ const teamsController = {
         })
         .catch(next);
         
+    },
+
+    delete(req, res, next) {
+        Team.getById(req.params.id)
+            .then(team => {
+                return team.delete();
+            }).then(()=> {
+                res.redirect('/teams')
+            })
+            .catch(next);
     }
 }
 
