@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 const usersController = {
   index(req, res, next) {
-    res.render('teams/index'{
+    res.render('teams/index', {
       message: 'hello world',
       user: req.user,
     })
