@@ -1,9 +1,11 @@
 const express = require('express');
 const teamsController = require('../controllers/teams-controller');
+const { loginRedirect, loginRequired } = require('../services/auth/auth-helper');
+const usersController = require('../controllers/user-controller');
 const teamsRouter = express.Router();
 
 teamsRouter.get('/', teamsController.index);
-teamsRouter.post('/', teamsController.create);
+teamsRouter.post('/', loginRequired, teamsController.create);
 teamsRouter.get('/new', (req, res)=> {
     res.render('teams/new');
 });

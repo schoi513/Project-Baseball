@@ -3,5 +3,4 @@ CREATE TABLE IF NOT EXISTS teams (
     name VARCHAR(255),
     win INTEGER,
     loss INTEGER,
-    user_id INTEGER REFERENCES users(id)
 );

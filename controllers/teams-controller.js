@@ -11,10 +11,12 @@ const teamsController = {
     },
 
     create(req, res, next) {
+        console.log(res.locals.user)
         new Team({
             name: req.body.name,
             win: req.body.win,
             loss: req.body.loss,
+            user_id: res.locals.user
         })
         .save()
         .then((team) => {

@@ -8,7 +8,14 @@ const usersController = {
       user: req.user,
     })
   },
+  find(req, res, next) {
+      console.log(res.locals.user)
+    //   User.getByUserName(){
+          
+    //   }
+  },
   create(req, res, next) {
+    console.log("user", req.body)
     const salt = bcrypt.genSaltSync();
     const hash = bcrypt.hashSync(req.body.password, salt);
     new User({

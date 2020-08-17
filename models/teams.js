@@ -26,7 +26,7 @@ class Team {
     save(){
         return db.one(`INSERT INTO teams (name, win, loss, user_id)
          VALUES ($/name/, $/win/, $/loss/, $/user_id/) 
-         RETURNING *`,).then(team => Object.assign(this, team));
+         RETURNING *`, this).then(team => Object.assign(this, team));
     }
 
     update(changes){
