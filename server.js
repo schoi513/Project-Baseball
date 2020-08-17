@@ -9,6 +9,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ exntended: false }));
+app.use(express.static('public'));
 
 app.set('views', 'views');
 app.set('view engine', 'ejs');

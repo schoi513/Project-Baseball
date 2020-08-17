@@ -4,7 +4,7 @@ const teamsController = {
     index(req, res, next){
         Team.getAll()
             .then(teams => {
-                res.json({
+                res.render('teams/index', {
                     teams
                 });
             }).catch(next);
@@ -13,6 +13,9 @@ const teamsController = {
     create(req, res, next) {
         new Team({
             name: req.body.name,
+            win: req.body.win,
+            loss: req.body.loss,
+            user_id: req.user.id,
         })
         .save()
         .then(team => {
