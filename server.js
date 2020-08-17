@@ -9,7 +9,7 @@ const passport = require('passport');
 
 
 const teamsRouter = require('./routes/teams-router');
-const cookieParser = require('cookie-parser');
+
 
 const app = express();
 require('dotenv').config();
@@ -26,6 +26,9 @@ app.use(
         resave: false,
         saveUninitialized: true,
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.set('views', 'views');
 app.set('view engine', 'ejs');
