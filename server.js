@@ -40,7 +40,9 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {
+        appName: 'teams',
+    });
 });
 
 app.use('/auth', authRouter);
@@ -52,8 +54,6 @@ app.use('*', (req, res)=> {
 });
 
 app.use((err, req, res, next) => {
-    res.status(err.status || 500).json({
-        message: err.message,
-        stack: err.stack,
-    });
+    res.status(500).send({ err, message: err.message });
+       
 });
