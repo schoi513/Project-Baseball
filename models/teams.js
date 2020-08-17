@@ -34,7 +34,7 @@ class Team {
         return db.one(`UPDATE teams SET 
         name = $/name/,
         win = $/win/,
-        loss = $/loss/,
+        loss = $/loss/
         WHERE id = $/id/
         RETURNING *`, this).then(team => Object.assign(this, team));
     }
