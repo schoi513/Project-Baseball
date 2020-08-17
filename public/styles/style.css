@@ -1,11 +1,11 @@
-/* body {
+body {
     font-family: sans-serif;
   }
   
   .page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 90vh;
   }
   
   main {
@@ -16,21 +16,21 @@
   }
   
   header {
-    background-color: rgb(5, 52, 105);
+    background-color: salmon;
   }
   
   .header-container {
-    width: 80vw;
-    max-width: 1000px;
+    width: 90vw;
+    max-width: 9000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 30px 0;
   }
   
   .logo {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     color: white;
   }
@@ -40,11 +40,11 @@
   }
   
   nav ul li {
-    margin: 0 10px;
-    color: rgba(125, 241, 221);
+    margin: 0 15px;
+    color: skyblue;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
   
   a:visited {
@@ -59,41 +59,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    font-size: 1.5em;
+    padding: 25px 0;
+    font-size: 2em;
     color: white;
-    background-color: rgb(5, 52, 105);
+    background-color: silver;
   }
   
   .teams-wrapper {
-    max-width: 600px;
-    width: 70vw;
+    max-width: 700px;
+    width: 80vw;
     margin: auto;
   }
   
   .team {
     width: 100%;
-    border: 1px solid rgba(125, 241, 221);
+    border: 2px solid black;
   }
   
   .name-status, .win-actions, .loss-actions {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 20px;
     align-items: center;
   }
   
   .name-status {
-    border-bottom: 1px solid rgb(126, 196, 184);
+    border-bottom: 1px solid grey;
   }
   
   .name-status h3 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
   }
   
   .buttonlike {
-    background-color:  rgba(125, 241, 221);
-    padding: 5px 10px;
-    border-radius: 3px;
-  } */
+    background-color: khaki;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }

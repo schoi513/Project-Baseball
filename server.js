@@ -7,8 +7,9 @@ const session = require('express-session');
 const passport = require('passport');
 
 
-
+const authRouter = require('./routes/auth-router');
 const teamsRouter = require('./routes/teams-router');
+const userRouter = require('./routes/user-router');
 
 
 const app = express();
@@ -42,7 +43,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.use('/auth', authRouter);
 app.use('/teams', teamsRouter);
+app.use('/user', userRouter);
 
 app.use('*', (req, res)=> {
     res.status(404).send('not found');
